@@ -1,4 +1,4 @@
-import mongoose, { Mongoose, Schema, model, models } from "mongoose";
+import mongoose, { Schema, model, models } from "mongoose";
 
 export const VIDEO_DIMENSIONS = {
   width: 1080,
@@ -12,7 +12,7 @@ export interface IVideo {
   videoUrl: string;
   thumbnailUrl: string;
   controls?: boolean;
-  transformation?: {
+  transformation?  : {
     height?: number;
     width?: number;
     quality?: number;
