@@ -25,9 +25,7 @@ export async function connectToDB() {
   }
   // If a connection is in progress, wait for it to resolve
   if (!cached.promise) {
-    const opts = {
-        
-    };
+    const opts = {};
     mongoose.connect(MONGODB_URI, opts).then(() => mongoose.connection);
   }
 
@@ -37,7 +35,6 @@ export async function connectToDB() {
   } catch (error) {
     cached.promise = null; // Reset the promise on error
     throw error;
-
-    return cached.conn;
   }
+  return cached.conn;
 }
